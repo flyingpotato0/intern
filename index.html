@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mockup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto Serif' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/1c56856b9e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="left">
+        <div class="icon logo"><i class="fa-solid fa-hippo fa-2xl" style="color: #82afff;"></i></div>
+        <div class="icon search"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #adadad;"></i></div>
+        <div class="icon home" id="active"><i class="fa-solid fa-house fa-xl" style="color: #adadad;"></i></div>
+        <div class="icon news"><i class="fa-solid fa-newspaper fa-xl" style="color: #adadad;"></i></div>
+        <div class="icon todo"><i class="fa-regular fa-rectangle-list fa-xl" style="color: #adadad;"></i></div>
+        <div class="icon user"><i class="fa-regular fa-user fa-xl" style="color: #adadad;"></i></div>
+        <div class="icon notification"><i class="fa-regular fa-bell fa-xl" style="color: #adadad;"></i></div>
+        <div class="icon logout"><i class="fa-solid fa-right-from-bracket fa-xl" style="color: #adadad;"></i></div>
+    </div>
+    <div class="mid">
+        <div class="user-data">
+            <div class="user-image"><img src="images/pexels-userdemo.jpg" alt="Profile Image" width="100vw"
+                    height="100vw" style="border-radius: 50%;" /></div>
+            <div class="user-name">
+                <p class="name">Hi Mike,</p>
+                <p class="wel">welcome back.</p>
+            </div>
+        </div>
+        <div class="today">
+            <p class="acc-head">Today</p>
+            <p class="acc-bal">$19,892</p>
+            <p class="acc-desc">Account Balance</p>
+            <div class="acc1">
+                <p class="acc-amt">$4000</p>
+                <p class="acc-desc">Year-to-Date Contributions</p>
+            </div>
+            <div class="acc2">
+                <p class="acc-amt">$1892</p>
+                <p class="acc-desc">Total Interest</p>
+            </div>
+            <div class="dropdown">
+                <button class="btn-want">I want to
+                    <i class="fa-sharp fa-solid fa-caret-down" style="color: #ffffff;"></i></button>
+                <div class="want-dropdown">
+                    <a>
+                        <p>Withdraw</p>
+                    </a>
+                    <a>
+                        <p>Transfer</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="recent">
+            <p class="recent-head">Recent Transactions</p>
+            <p class="recent-date">2020-08-01</p>
+            <p class="recent-transac">Withdrawal Transfer to Bank-XXX11</p>
+            <hr>
+            <p class="recent-date">2020-07-21</p>
+            <p class="recent-transac">Withdrawal Transfer to Bank-XXX11</p>
+            <hr>
+            <p class="recent-date">2020-07-16</p>
+            <p class="recent-transac">Withdrawal Transfer to Bank-XXX11</p>
+            <hr>
+
+        </div>
+    </div>
+    <div class="right">
+        <p class="retire-head">Retirement Income</p>
+        <p class="retire-year">Starting Year 2056</p>
+        <div class="goal">
+            <p class="amt">$300000</p>
+            <p class="desc">My Goal</p>
+        </div>
+        <div class="goal" id="goal2">
+            <p class="amt">59%</p>
+            <p class="desc">Goal Achieved</p>
+        </div>
+        <div class="goal" id="goal3">
+            <p class="amt">$300</p>
+            <p class="desc">Est. Monthly Income</p>
+        </div>
+        <div class="chart-head">
+            <p>Contribution Overtime</p>
+        </div>
+        <div class="chart" style="height: fit-content;">
+            <canvas id="StackChart" style="height:'250px'; width:'500px'"></canvas>
+        </div>
+        <div class="peer" style="height: fit-content;">
+            <p class="p1">How do I compare to my peers?</p>
+            <p class="p2">These numbers represent current goal achievement
+            </p>
+            <div class="option">
+                <p><span>Age:</span> Under 30 <i class="fa-sharp fa-solid fa-caret-down fa-xs"
+                        style="color: #7b7b7b;"></i></p>
+                <hr>
+                <p><span>Salary:</span> K 20 - K 30 <i class="fa-sharp fa-solid fa-caret-down fa-xs"
+                        style="color: #7b7b7b;"></i></p>
+                <hr>
+                <p><span>Gender:</span> Male <i class="fa-sharp fa-solid fa-caret-down fa-xs"
+                        style="color: #7b7b7b;"></i></p>
+                <hr>
+            </div>
+            <div class="pie Avg"><canvas id="borderPieChart1"></canvas></div>
+            <div class="pie Top"><canvas id="borderPieChart2"></canvas></div>
+            <div class="pie Me"><canvas id="borderPieChart3"></canvas></div>
+        </div>
+    </div>
+    <div class="end">
+        <div class="strategy">
+
+            <p class="strat-head">Retirement Strategy</p>
+            <div class="strat-left">
+                <div class="slider">
+                    <p>Employee Contribution</p>
+                    <input type="range" id="range1" min="1" max="100" value="12" />
+                    <p id="val" style="margin-right: 0;"></p>
+                    <p>%</p>
+                </div>
+                <div class="slider">
+                    <p>Retirement Age</p>
+                    <input type="range" id="range2" min="60" max="110" value="65" />
+                    <p id="val2" style="margin-right: 0;"></p>
+                </div>
+                <hr style="clear: both;">
+            </div>
+            <div class="strat-data">
+                <p style="float:left;">Employee Contribution</p>
+                <p style="text-align: right; float:right;">8.4%</p>
+                <p style="float:left; clear: both;">Interest Rate</p>
+                <p style="text-align: right; float:right; ">5%</p>
+
+                <button class="update-btn">Update</button>
+                <a class="help" href="#">
+                    <p>View Help Docs ></p>
+                </a>
+            </div>
+        </div>
+        <div class="ad" style="font-family: 'Roboto';">
+            <p style="font-size:1.2em; margin-bottom:0.5em; margin-top: 0;">Are you considering a</p>
+            <p style="font-size:1.2em; font-weight:bold; margin-top: 0.5em; margin-bottom:0.6em">Housing Advance?</p>
+            <p style="color:#7b7b7b; margin-top:0.6em">Limited time reduced interest.</p>
+            <a href="#" style="text-align: left;">
+                <p style=" margin-bottom: 0;">Learn More ></p>
+            </a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="pieScript1.js"></script>
+    <script src="pieScript2.js"></script>
+    <script src="pieScript3.js"></script>
+</body>
+
+</html>
